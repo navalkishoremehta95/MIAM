@@ -1,41 +1,52 @@
-# MIAM: Multimodal Industrial Activity Monitoring 
+# MIAM: Multimodal Industrial Activity Monitoring
+
+Code and preprocessing for the [MIAM](https://huggingface.co/datasets/ArvindSihag/MIAM) dataset (HRI 2025).
+
+| | |
+| --- | --- |
+| **Dataset** | https://huggingface.co/datasets/ArvindSihag/MIAM |
+| **Paper** | https://arxiv.org/abs/2501.05936 |
+| **ACM** | https://dl.acm.org/doi/10.5555/3721488.3721619 |
+
 ## Overview
-The **MIAM Dataset** is a comprehensive multimodal dataset designed to facilitate research in human-robot collaboration, activity recognition, and engagement prediction within industrial environments. Captured during realistic assembly and disassembly workflows, the dataset offers a rich resource for advancing industrial automation, human behavior modeling, and collaborative robotics.
 
-## Features
-- **Multimodal Data**: Includes RGB, depth, and 9-axis IMU sensor data from both hands.
-- **Annotations**: Provides action labels, engagement states, and timestamps for over 22 sessions.
-- **Realistic Scenarios**: Simulates real-world tasks with natural operator variability.
-- **Gender-Diverse Subjects**: Includes data from 8 participants across different demographics.
-- **Untrimmed Videos**: Covers 220 minutes of industrial activity.
+MIAM supports research on human–robot collaboration, activity recognition, and engagement prediction in industrial settings. Recordings cover realistic assembly and disassembly workflows with synchronized third-person RGB, top-view RGB and depth, and left/right-hand IMU streams.
 
-## Applications
-The dataset supports a variety of research tasks:
-- Action recognition and localization
-- Engagement prediction
-- Human-robot interaction and collaboration modeling
+- 22 sessions, 8 operators
+- About 290 minutes of untrimmed video
+- Labels for actions, object interaction, and engagement
+- 70/30 train/test split on Hugging Face
 
-## Dataset Structure
-The dataset is organized into the following components:
-- `RGB/`: Multi-view RGB video files
-- `Depth/`: Synchronized depth frames
-- `IMU/`: Motion sensor data
-- `Annotations/`: JSON files with labeled actions, engagement states, and timestamps
+## Repository layout
 
-## Recording Setup
-- **Cameras**: Logitech Brio 4K and Intel RealSense D455
-- **IMU Sensors**: Worn on both hands for motion capture
-- **Annotation Tool**: VGG Image Annotator (VIA)
+- `src/` — model and training code
+- `preprocess/` — C1/C2 prep and IMU sync scripts
 
-## Usage
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/navalkishoremehta95/MIAM.git
+## Getting the data
 
+1. Request access on Hugging Face: [ArvindSihag/MIAM](https://huggingface.co/datasets/ArvindSihag/MIAM)
+2. Download session archives under `train/` and `test/`
+3. Extract each `session_XX.zip` and follow the layout in the dataset card
 
-## contact
-naval.ceeri18a@acsir.res.in, sanjay@ceeri.res.in
+License: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) (research use only; redistribution not permitted).
 
-   
+## Citation
 
- 
+```bibtex
+@inproceedings{arvind2025multimodal,
+  title     = {A Multimodal Dataset for Enhancing Industrial Task
+               Monitoring and Engagement Prediction},
+  author    = {Arvind and Mehta, Naval Kishore and Kumar, Himanshu
+               and Saurav, Sumeet and Singh, Sanjay},
+  booktitle = {Proceedings of the 20th ACM/IEEE International
+               Conference on Human-Robot Interaction (HRI)},
+  year      = {2025}
+}
+```
+
+## Contact
+
+- Naval Kishore Mehta — naval.mehta95@gmail.com / naval.ceeri18a@acsir.res.in
+- Sanjay Singh — sanjay@ceeri.res.in
+
+Questions and issues: https://github.com/navalkishoremehta95/MIAM/issues
