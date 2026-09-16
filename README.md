@@ -6,7 +6,6 @@ Code and preprocessing for the [MIAM](https://huggingface.co/datasets/ArvindSiha
 | --- | --- |
 | **Dataset** | https://huggingface.co/datasets/ArvindSihag/MIAM |
 | **Paper (ACM/IEEE)** | https://doi.org/10.1109/HRI61500.2025.10974158 |
-| **Code** | https://github.com/navalkishoremehta95/MIAM |
 
 ## Overview
 
